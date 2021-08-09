@@ -1,0 +1,19 @@
+<div>
+  <div>
+    <h1>New Game</h1>
+  </div>
+  <div>
+    <ul>
+      <% @letters.each do |letter| %>
+        <li><%= letter %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <form accept-charset="UTF-8" action="/score" method="post">
+      <input type="text" name="answer">
+      <input type="submit" value="Play">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+  </div>
+</div>
